@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use http\Url;
 use Throwable;
 
-class IdVaultClient {
+class IdVaultApiClient {
     /**
      * Endpoint of the API
      */
