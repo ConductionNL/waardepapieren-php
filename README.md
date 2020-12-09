@@ -1,7 +1,7 @@
 <h1 align="center">id-Vault API client for PHP</h1>
 
 ## Requirements ##
-To use the Mollie API client, the following things are required:
+To use the id-Vault API client, the following things are required:
 
 + Get yourself a [id-Vault Account](https://www.id-vault.com).
   And make sure you have an organization and application set up.
