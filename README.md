@@ -1,2 +1,1 @@
-# id-vault-php
-id-vault library
+<h1 align="center">id-Vault Library</h1>
