@@ -80,10 +80,11 @@ class IdVaultApiClient {
      * @param string $applicationId id of your id-vault application.
      * @param string $secret secret of your id-vault application.
      * @param string $code the code received by id-vault oauth endpoint.
+     * @param string $state (optional) A random string used by your application to identify a unique session
      *
      * @return array|false returns response from id-vault or false
      */
-    public function authenticateUser(string $code, string $applicationId, string $secret)
+    public function authenticateUser(string $code, string $applicationId, string $secret, string $state = null)
     {
         try {
 
@@ -92,6 +93,7 @@ class IdVaultApiClient {
                 'clientSecret'      => $secret,
                 'code'              => $code,
                 'grantType'         => 'authorization_code',
+                'state'             => $state
             ];
 
             $response = $this->client->request(self::HTTP_POST, '/api/access_tokens', [
