@@ -1,12 +1,12 @@
 <?php
 
-namespace Conduction\IdVaultApi;
+namespace Conduction\Waardepapieren;
 
 use GuzzleHttp\Client;
 use http\Url;
 use Throwable;
 
-class IdVaultApiClient {
+class WaardepapierenApiClient {
     /**
      * Endpoint of the API
      */
