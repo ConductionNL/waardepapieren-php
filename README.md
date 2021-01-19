@@ -3,9 +3,7 @@
 ## Requirements ##
 To use the waardepapieren API client, the following things are required:
 
-+ Get yourself a [waardepapieren acount](https://www.id-vault.com).
-  And make sure you have an organization and application set up.
-+ PHP >= 7.1.3
++ PHP >= 7.4.0
 
 
 ## Composer Installation ##
@@ -27,8 +25,30 @@ By far the easiest way to install the waardepapieren API client is to require it
 Initializing the waardepapieren API client.
 
 ```php
-$idVault = new \Conduction\Waardepapieren\WaardepapierenApiClient();
+$waardepapieren = new \Conduction\Waardepapieren\WaardepapierenApiClient();
 ``` 
+
+## Validating JWS Tokens ##
+For validating JWS tokens we provide two functions.
+
+For validating the signature of the token we use the verifyJWSToken function.
+This function needs the public JWK key and the JWS token.
+```php
+$valid = $waardepapieren->verifyJWSToken($key, $token);
+```
+
+It wil then return a boolean based on the fact if the signature is valid.
+
+The second function named checkTokenData looks for differences is the data that's present in the JWS token compared to an array.
+The provided array is the data of the claim.
+
+This function needs the JWS token and a array with data.
+```php
+$valid = $waardepapieren->checkTokenData($token, $data);
+```
+
+It will then return a boolean based on the fact if there is a difference between the two datasets.
+True means there are no differences between the datasets and false if the two datasets differ from each other.
 
 ## License ##
 Copyright (c) 2018 Copyright. All Rights Reserved. Made with love by <strong>Conduction</strong>.
